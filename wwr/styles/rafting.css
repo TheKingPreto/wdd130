@@ -1,16 +1,47 @@
 :root {
     --primary-font: 'Lexend Giga', sans-serif;
     --body-font: 'Noto Serif Todhri', serif;
-    --primary-color: #3F75B8;  
-    --secondary-color: #516494; 
-    --accent-dark: #435574;   
-    --text-color: #333;        
-    --background-color: #FFF;  
+    --primary-color: #007BFF;  
+    --secondary-color: #5BC0EB ; 
+    --accent-dark: #1D1F28 ;   
+    --text-color: #E0E0E0 ;        
+    --background-color: #121212;  
+}
+header {
+    display: grid;
+    grid-template-columns: auto 1fr; 
+    align-items: center; 
+    gap: 20px; 
+    padding: 20px 40px; 
+    background-color: var(--primary-color); 
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); 
+}
+header img {
+    max-width: 180px; 
+    height: auto;
+}
+nav{
+    display: flex;
+    justify-content: flex-start; 
+    gap: 20px; 
+}
+nav a {
+    font-family: var(--primary-font);
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 5px 10px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease-in-out;
+}
+nav a:hover {
+    background-color: var(--secondary-color);
+    color: white;
 }
 body {
     font-family: var(--body-font);
     color: var(--primary-color);
-    background-color: var(--accent-dark);
+    background-color: var(--background-color);
     margin: 0;
     padding: 0;
 }
@@ -44,6 +75,7 @@ body {
     left: 50%;
     transform: translateX(-50%);
     width: 90%;
+    max-width: 800px;
     background: rgba(0, 0, 0, 0.7);
     color: white;
     padding: 20px;
@@ -74,26 +106,65 @@ p {
     color: var(--text-color);
     line-height: 1.6;
 }
+section {
+    padding: 40px 20px;
+    text-align: center;
+}
+
+section h2 {
+    font-size: 2rem;
+    font-family: var(--primary-font);
+    color: var(--secondary-color);
+    margin-bottom: 20px;
+}
+
+section p {
+    font-family: var(--body-font);
+    color: var(--text-color);
+    line-height: 1.6;
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: left;
+}
+section > .adventure-gallery {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 20px; 
+    justify-items: center; 
+    margin-top: 30px;
+}
+@media (max-width: 1200px) {
+    section > .adventure-gallery {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+@media (max-width: 768px) {
+    section > .adventure-gallery {
+        grid-template-columns: 1fr; 
+    }
+}
 footer {
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;
     background-color: var(--primary-color);
     color: white;
-    text-align: center;
-    padding: 20px;
+    padding: 20px 40px; 
+    margin-top: 40px; 
 }
-nav a {
-    font-family: var(--primary-font);
-    color: var(--primary-color);
-    text-decoration: none;
-    margin-right: 20px;
-    font-weight: bold;
+footer p {
+    font-family: var(--body-font);
+    font-size: 1rem;
+    margin: 0;
 }
-nav a:hover {
-    color: var(--accent-dark);
-    text-decoration: underline;
+.sociallinks {
+    display: flex;
+    justify-content: flex-end;
+    gap: 20px; 
 }
 .sociallinks a img {
     width: 30px;
-    margin: 0 10px;
+    height: auto;
     transition: transform 0.3s ease-in-out;
 }
 .sociallinks a:hover img {
@@ -110,4 +181,35 @@ nav a:hover {
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+
+figure {
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    overflow: hidden; 
+    transition: transform 0.3s ease; 
+}
+
+figure:hover {
+    transform: scale(1.05); 
+}
+
+figure img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover; 
+}
+figcaption {
+    font-family: var(--body-font);
+    color: white;
+    background-color: var(--primary-color);
+    padding: 10px;
+    text-align: center;
+    font-size: 1rem;
+    width: 100%;
 }
