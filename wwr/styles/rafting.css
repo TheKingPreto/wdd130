@@ -49,7 +49,7 @@ body {
 .hero {
     position: relative;
     width: 100%;
-    height: 400px;
+    height: 500px;
     background-image: url("../images/hero_background.jpeg");
     background-size: cover;
     background-position: center;
@@ -58,13 +58,13 @@ body {
     align-items: center;
     justify-content: center;
 }
-.hero h1 {
-    font-size: 3rem;
+.hero-text h1 {
+    font-size: 3rem; 
     font-weight: 700;
-    position: absolute;
+    position: center;
     color: white;
     text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.7);
-    background: rgba(0, 0, 0, 0.4);
+    background: rgba(0, 0, 0, 0.5);
     padding: 10px 20px;
     border-radius: 5px;
 }
@@ -101,11 +101,178 @@ h1, h2, h3 {
     font-family: var(--primary-font);
     color: var(--secondary-color);
 }
-p {
-    font-family: var(--body-font);
-    color: var(--text-color);
-    line-height: 1.6;
+.hero-text p {
+    font-size: 1.25rem;
+    color: white;
+    background: rgba(0, 0, 0, 0.4);
+    padding: 5px 15px;
+    border-radius: 5px;
 }
+
+.trip-descriptions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    padding: 40px 20px;
+}
+
+.trip-descriptions .trip-card {
+    background-color: #333;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: transform 0.3s ease-in-out;
+}
+
+.trip-descriptions .trip-card:hover {
+    transform: scale(1.05);
+}
+
+
+.trip {
+    width: 30%;
+    background-color: rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    overflow: hidden;
+    text-align: center;
+}
+
+.trip img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.trip h3 {
+    color: var(--primary-color);
+    margin-top: 10px;
+}
+
+.trip-section {
+    padding: 40px 20px;
+    background-color: #1D1F28;
+}
+
+.trip-section h1 {
+    font-family: var(--primary-font);
+    color: var(--secondary-color);
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+    text-align: flex;
+}
+
+.trip-section h2 {
+    font-family: var(--primary-font);
+    color: var(--secondary-color);
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.trips-table table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 40px;
+}
+
+.trips-table th, .trips-table td {
+    padding: 10px;
+    text-align: center;
+    border: 1px solid #ddd;
+}
+
+.trips-table th {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.cta-btn {
+    padding: 10px 20px;
+    background-color: var(--secondary-color);
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 1.25rem;
+    margin-top: 20px;
+}
+
+.cta-btn:hover {
+    background-color: #006fa6;
+}
+
+.newsletter {
+    background-color: #333;
+    padding: 40px 20px;
+    text-align: center;
+    color: white;
+}
+
+.newsletter h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+.newsletter form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.newsletter input,
+.newsletter button {
+    font-size: 1rem;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+.newsletter input {
+    width: 250px;
+}
+
+.newsletter button {
+    background-color: var(--primary-color);
+    color: white;
+    cursor: pointer;
+}
+
+.newsletter button:hover {
+    background-color: var(--secondary-color);
+}
+
+.grid-layout {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.grid-item img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 10px;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.grid-item h3 {
+    font-size: 1.5rem;
+    color: var(--secondary-color);
+    margin-top: 15px;
+}
+
+.grid-item p {
+    font-size: 1rem;
+    color: var(--text-color);
+}
+
+.grid-item:hover {
+    transform: scale(1.05); 
+    transition: transform 0.3s ease-in-out;
+}
+
 section {
     padding: 40px 20px;
     text-align: center;
@@ -152,8 +319,20 @@ footer {
     padding: 20px 40px; 
     margin-top: 40px; 
 }
+
+footer a {
+    color: white;
+    text-decoration: none;
+    font-size: 1rem;
+    padding: 5px 10px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease-in-out;
+}
+
+footer a:hover {
+    background-color: var(--secondary-color);
+}
 footer p {
-    font-family: var(--body-font);
     font-size: 1rem;
     margin: 0;
 }
@@ -167,7 +346,6 @@ footer p {
     width: 30px;
     height: auto;
     transition: transform 0.3s ease-in-out;
-    background-color: white;
    
 }
 .sociallinks a:hover img {
